@@ -1,0 +1,6 @@
+[package]
+name = "proj_pig_latin"
+version = "0.1.0"
+authors = ["Thomas Harrison <twh2898@vt.edu>"]
+
+[dependencies]
