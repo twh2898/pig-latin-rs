@@ -22,7 +22,8 @@ fn to_pig_latin(string: String) -> String {
         string_out.push_str("ay ");
     }
 
-    return string_out;
+    // remove additional space
+    return String::from(string_out.trim());
 }
 
 fn main() {
@@ -47,5 +48,18 @@ fn main() {
             Ok(_) => println!("{}", to_pig_latin(input)),
             _ => println!("There was an error reading from the console!"),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_to_pig_latin() {
+        assert_eq!("ellohay", &to_pig_latin("hello".to_string()));
+        assert_eq!("orldway", &to_pig_latin("world".to_string()));
+
+        assert_eq!("ellohay orldway", &to_pig_latin("hello world".to_string()));
     }
 }
