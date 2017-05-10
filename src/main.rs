@@ -1,29 +1,13 @@
+extern crate itertools;
+use itertools::Itertools;
 
-fn to_pig_latin(string: String) -> String {
-    let vowels: Vec<char> = vec!['a', 'e', 'i', 'o', 'u'];
-    let strings = string.split_whitespace();
-    let mut string_out = String::new();
-
-    for string in strings {
-        let mut prefix = String::new();
-
-        for chr in string.chars() {
-            if vowels.contains(&chr) {
-                break;
-            }
-            prefix.push(chr);
-        }
-
-        let prefix_count = prefix.chars().count();
-        let body: String = string.chars().skip(prefix_count).collect();
-
-        string_out.push_str(&body);
-        string_out.push_str(&prefix);
-        string_out.push_str("ay ");
-    }
-
-    // remove additional space
-    return String::from(string_out.trim());
+fn to_pig_latin(input: &str) -> String {
+    input.split_whitespace()
+         .map(|word| {
+             let (dups, after) = word.split_at(word.find(&['a', 'e', 'i', 'o', 'u'][..]).unwrap_or(0));
+             after.to_owned() + dups + "ay"
+         })
+         .join(" ")
 }
 
 fn main() {
@@ -38,14 +22,14 @@ fn main() {
         }
         else {
             for arg in env::args() {
-                println!("{}", to_pig_latin(arg));
+                println!("{}", to_pig_latin(&arg));
             }
         }
     }
     else {
         let mut input = String::new();
         match io::stdin().read_line(&mut input) {
-            Ok(_) => println!("{}", to_pig_latin(input)),
+            Ok(_) => println!("{}", to_pig_latin(&input)),
             _ => println!("There was an error reading from the console!"),
         }
     }
