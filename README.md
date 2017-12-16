@@ -17,7 +17,10 @@ All output will be written to `STDOUT` while errors are written to `STDERR`.
 
 ## TODO
 
-* [ ] Use CLAP
+* [X] Use CLAP
+* [X] Support read from stdin
+* [X] Support read from file
+* [X] Support read from arguments
 * [ ] Add checks to ignore punctuation
 
 ## Licence
