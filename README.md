@@ -1,19 +1,25 @@
-# Project Pig Latin
+# Pig Latin RS
 
 An English to Pig Latin converter writen in Rust.
 
 ## Usage
 
-If you run the application with no parameters, the string to converted will be read from `STDIN`.
+```
+$ pig-latin words to translate
+$ pig-latin
+> words
+> to translate
+```
 
-If you pass a parameter of `-h` to the application, the help dialog will be displayed
+Any words passed as parameters will be translated. Use the parameter `-f` to specify a file as input. If not parameters are passed, `STDIN` will be read for input.
 
-If you enter a parameter other than `-h` to the application, it will be read as the input and `STDIN` will be ignored.
+All output will be written to `STDOUT` while errors are written to `STDERR`.
 
 ## TODO
 
+* [ ] Use CLAP
 * [ ] Add checks to ignore punctuation
 
 ## Licence
 
-proj_pig-latin uses the [MIT](LICENCE) licence
+pig-latin-rs uses the [MIT](LICENCE) licence

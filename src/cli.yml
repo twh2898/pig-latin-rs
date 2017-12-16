@@ -1,0 +1,13 @@
+name: Pig Latin Converter
+version: "1.0"
+author: Thomas Harrison <twh2898@vt.edu>
+about: Takes a list of English worsk seperated by whitespace and converts them into pig latin
+args:
+    - file:
+        short: f
+        long: file
+        help: Sets the input file to use
+        takes_value: true
+    - INPUT:
+        takes_value: true
+        multiple: true
