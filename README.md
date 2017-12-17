@@ -5,8 +5,8 @@ An English to Pig Latin converter writen in Rust.
 ## Usage
 
 ```
-$ pig-latin words to translate
-$ pig-latin
+$ pig_latin words to translate
+$ pig_latin
 > words
 > to translate
 ```

@@ -49,7 +49,7 @@ version = "0.2.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "pig-latin"
+name = "pig_latin"
 version = "1.0.0"
 dependencies = [
  "clap 2.29.0 (registry+https://github.com/rust-lang/crates.io-index)",
